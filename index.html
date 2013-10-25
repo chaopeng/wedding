@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>
+      巢鹏❤黄榆的婚礼
+    </title>
+    <meta name="description" content="巢鹏与黄榆的婚礼网站">
+    <meta name="author" content="巢鹏❤黄榆">
+    <!-- Le styles -->
+    <link href="/favicon.ico" rel="shortcut icon">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/my.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Numans' rel='stylesheet'
+    type='text/css'>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+      </script>
+    <![endif]-->
+    <script type="text/javascript" src="/js/jquery-2.0.3.min.js">
+    </script>
+    <script type="text/javascript" src="/js/jquery.backstretch.min.js">
+    </script>
+    <script type="text/javascript">
+      // 切背景
+      $(function() {
+        $.backstretch(["/img/bg1.jpg", "/img/bg2.jpg"], {
+          duration: 3000,
+          fade: 750
+        });
+      })
+
+      function submit() {
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+        var num = $("#num").val();
+        var friend = 0;
+
+        var friends = $("[name='friend']");
+        friends.each(function() {
+          if (!this.checked) {
+            return;
+          }
+          if ($(this).attr("id") == "cp") {
+            friend += 1;
+          }
+          if ($(this).attr("id") == "hy") {
+            friend += 2;
+          }
+        });
+
+        if (name == null || phone == null || num == null || friend == 0) {
+          alert("请将您的资料输入完整");
+          return;
+        } else {
+          $.get("submit.php", {
+            name: name,
+            phone: phone,
+            num: num,
+            friend: friend
+          },
+          function(data) {
+            alert("感谢您的支持！");
+          });
+        }
+      }
+
+      navi = 0;
+
+      function hide(callback) {
+        if (navi == 0 && callback == null) return;
+        if (navi == 0) {
+          callback();
+          return;
+        }
+        var elm;
+        if (navi == 1) elm = $("#invate");
+        if (navi == 2) elm = $("#sign");
+        if (navi == 3) elm = $("#comment");
+
+        if (callback == null) {
+          elm.fadeOut("slow");
+          navi = 0;
+        } else {
+          elm.fadeOut("slow", callback);
+        }
+      }
+
+      function showInvate() {
+        if (navi == 1) return;
+        hide(function() {
+          $("#invate").fadeIn("slow");
+          navi = 1;
+        });
+      }
+
+      function showSign() {
+        if (navi == 2) return;
+        hide(function() {
+          $("#sign").fadeIn("slow");
+          navi = 2;
+        });
+      }
+
+      function showComment() {
+        if (navi == 3) return;
+        hide(function() {
+          $("#comment").fadeIn("slow");
+          navi = 3;
+        });
+      }
+    </script>
+  </head>
+  
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+    <div class="navbar navbar-fixed-top divider-vertical">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </a>
+          <a class="brand" href="javascript:hide();">
+            ❤
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="javascript:showInvate();">
+                  婚礼邀请
+                </a>
+              </li>
+              <li>
+                <a href="javascript:showSign();">
+                  婚礼报名
+                </a>
+              </li>
+              <li>
+                <a href="javascript:showComment();">
+                  在线祝福
+                </a>
+              </li>
+            </ul>
+            <ul class="nav pull-right">
+              <li>
+                <a href="https://me.alipay.com/chaopeng" target="_blank">
+                  在线支付礼金
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span6 offset2">
+        <div class="content" id="invate" style="display:none;">
+          <p>
+	<span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:20px;background-color:#FFFFFF;">各位亲戚朋友：&nbsp;</span> 
+</p>
+<p>
+	<span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:1.5;">&nbsp; &nbsp; &nbsp; &nbsp; 巢健鹏先生和黄榆女士谨订于2013年8月18日（星期日）</span><span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:20px;background-color:#FFFFFF;">即癸已年庚申月丙辰日下午，在广州天河区一口田酒家举办喜筵。&nbsp;</span> 
+</p>
+<p>
+	<span style="line-height:1.5;font-size:16px;"><span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:24px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-size:16px;">诚邀您参与他们的婚礼，作为他们爱情的见证人。</span></span> 
+</p>
+<p>
+	<span style="line-height:1.5;"><span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:20px;background-color:#FFFFFF;"><span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:24px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-size:16px;">4点半恭候，5点入席。</span></span><span style="font-size:16px;"></span></span> 
+</p>
+<p>
+	<span style="line-height:1.5;font-size:16px;"><span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:24px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style="font-size:16px;">恭请</span></span> 
+</p>
+<p>
+	<span style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:1.5;">光临！</span> 
+</p>
+<p>
+	<span style="font-size:16px;"><br />
+</span> 
+</p>
+<p style="text-align:right;">
+	<span style="font-size:16px;"><span style="line-height:24px;font-size:16px;">巢健鹏黄榆敬上</span></span> 
+</p>
+<p style="text-align:right;">
+	<span style="font-size:16px;">2013年8月8日</span> 
+</p>
+
+            <a href='http://j.map.baidu.com/GFoAM' target='_blank'>
+              <img style="margin:2px" width="600" height="400" src="http://api.map.baidu.com/staticimage?width=600&height=400&center=113.354486,23.176694&zoom=18&markers=113.354477,23.177068&markerStyles=l,0"
+              />
+            </a>
+        </div>
+        <div class="content" id="sign" style="display:none;">
+          <form class="form-horizontal" action="javascript:submit();">
+            <fieldset>
+              <div id="legend" class="">
+                <legend class="">
+                  我要报名
+                </legend>
+              </div>
+              <div class="control-group">
+                <!-- Text input-->
+                <label class="control-label" for="input01">
+                  姓名
+                </label>
+                <div class="controls">
+                  <input type="text" placeholder="" class="input-xlarge" id="name">
+                  <p class="help-block">
+                  </p>
+                </div>
+              </div>
+              <div class="control-group">
+                <!-- Text input-->
+                <label class="control-label" for="input01">
+                  电话
+                </label>
+                <div class="controls">
+                  <input type="text" placeholder="" class="input-xlarge" id="phone">
+                  <p class="help-block">
+                  </p>
+                </div>
+              </div>
+              <div class="control-group">
+                <!-- Text input-->
+                <label class="control-label" for="input01">
+                  参加人数
+                </label>
+                <div class="controls">
+                  <input type="text" placeholder="" class="input-xlarge" id="num">
+                  <p class="help-block">
+                  </p>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                  我认识
+                </label>
+                <!-- Multiple Checkboxes -->
+                <div class="controls" id="friend">
+                  <!-- Inline Checkboxes -->
+                  <label class="checkbox inline">
+                    <input type="checkbox" name="friend" value="巢鹏" id="cp">
+                    巢鹏
+                  </label>
+                  <label class="checkbox inline">
+                    <input type="checkbox" name="friend" value="黄榆" id="hy">
+                    黄榆
+                  </label>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">
+                </label>
+                <!-- Button -->
+                <div class="controls">
+                  <input type="submit" class="btn btn-success" value="提交" />
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="content" id="comment" style="display:none;">
+          <!-- Duoshuo Comment BEGIN -->
+          <div class="ds-thread">
+          </div>
+          <script type="text/javascript">
+            var duoshuoQuery = {
+              short_name: "cphy"
+            }; (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';
+              ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+          </script>
+          <!-- Duoshuo Comment END -->
+        </div>
+      </div>
+      <div id="love">
+        <img src="/img/love.png">
+      </div>
+      <!-- JiaThis Button BEGIN -->
+      <script type="text/javascript">
+        var jiathis_config = {
+          summary: "感谢您见证我们的爱情！forever love！#巢鹏与黄榆的婚礼# @巢鹏 @到处找乐的闲云儿 ",
+          pic: "http://cphy.sinaapp.com/img/bg1.jpg",
+          ralateuid: {
+            "tsina": "巢鹏"
+          },
+          showClose: true,
+          shortUrl: false,
+          hideMore: false
+        }
+      </script>
+      <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&btn=l5.gif&move=0"
+      charset="utf-8">
+      </script>
+      <!-- JiaThis Button END -->
+  </body>
+  <script type="text/javascript">
+  </script>
+
+</html>
